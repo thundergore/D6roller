@@ -36,11 +36,11 @@ while roll_dice == 'y':
     print("\n You can see how many of each you rolled below brother: \n", unique_dice)
 
     """Stats"""
-    print("\n By the Emperor's will the mean for this rolling spree was: ", dice_result.mean())
+    print("\n By the Emperor's will the mean for this rolling spree was: ", round(dice_result.mean(), 3))
     """Incrementing the historic_mean_count"""
     historic_mean_count = historic_mean_count + 1
     """Saving that statistic to a list"""
-    historic_mean = ((historic_mean + dice_result.mean()) / historic_mean_count)
+    historic_mean = round(((historic_mean + dice_result.mean()) / historic_mean_count), 3)
 
 
     """The input to set roll_dice to y or n"""
