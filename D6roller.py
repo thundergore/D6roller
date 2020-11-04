@@ -1,9 +1,9 @@
 import numpy as np
 import pandas as pd
 
-"""The following 2 are used for Davis Ford's session history roll average idea"""
-historic_mean = 0
-historic_mean_count = 0
+"""The following is used for Davis Ford's session history roll average idea"""
+historic_rolls = []
+
 """Setting up userinput to roll again once done"""
 roll_dice = 'y'
 while roll_dice == 'y':
@@ -37,14 +37,16 @@ while roll_dice == 'y':
 
     """Stats"""
     print("\n By the Emperor's will the mean for this rolling spree was: ", round(dice_result.mean(), 3))
-    """Incrementing the historic_mean_count"""
-    historic_mean_count = historic_mean_count + 1
-    """Saving that statistic to a list"""
-    historic_mean = round(((historic_mean + dice_result.mean()) / historic_mean_count), 3)
+    """Saving the mean to a list"""
+    historic_rolls.append(round(dice_result.mean(), 3))
 
+    """Troubleshooting"""
+    print("Here are the average value(s) of previous rolls brother:", historic_rolls)
 
     """The input to set roll_dice to y or n"""
     roll_dice = input("\n Are the filty Xenos still standing? (y or n) ")
 
 if roll_dice is not 'y':
-    print("\nGlory to the Emperor! The inquisition wills that I share the average of your last {} dice rolls: {}".format(historic_mean_count, historic_mean))
+    """Return historic stats for session with historic roll list"""
+    historic_mean = round(sum(historic_rolls) / len(historic_rolls), 3)
+    print("\nGlory to the Emperor! The inquisition wills that I share the average of your last {} dice rolls: {}".format(len(historic_rolls), historic_mean))
