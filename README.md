@@ -13,3 +13,6 @@ Some statistics are provided (mean for each roll and historical mean at end of s
 
 ### Credits
 Davis E. Ford for the idea for historical mean at session end.
+
+
+Testing work credentials change
