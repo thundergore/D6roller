@@ -44,4 +44,4 @@ while roll_dice == 'y':
 if roll_dice != 'y':
     #Return historic stats for session with historic roll list
     historic_mean = round(sum(historic_rolls) / len(historic_rolls), 3)
-    print("\nGlory to the Emperor! The inquisition wills that I share the average of your last {} dice rolls: {}".format(len(historic_rolls), historic_mean))
+    print("\nGlory to the Emperor! The inquisition wills that I share the average of your last {} dice rolls: The average was {}".format(len(historic_rolls), historic_mean))
